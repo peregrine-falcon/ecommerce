@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 
 const Banner = () => {
@@ -15,6 +15,14 @@ const Banner = () => {
         const newIndex = (displayTextIndex + 1) % displayTexts.length;
         setDisplayTextIndex(newIndex);
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleClickRight();
+        }, 2000); // Change text every 5 seconds
+
+        return () => clearInterval(interval);
+    }, [displayTextIndex]);
 
     return (
         <div className="bg-[#F4F4F4] p-2 flex gap-5 items-center justify-center">

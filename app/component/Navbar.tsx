@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const navigation = [
   { name: 'Categories', href: '#' },
@@ -26,9 +27,9 @@ export default function Navbar() {
         </div> */}
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <h2 className="">ECOMMERCE</h2>
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
