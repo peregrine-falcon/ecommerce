@@ -19,16 +19,16 @@ const Banner = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             handleClickRight();
-        }, 2000); // Change text every 5 seconds
+        }, 2000);
 
         return () => clearInterval(interval);
     }, [displayTextIndex]);
 
     return (
         <div className="bg-[#F4F4F4] p-2 flex gap-5 items-center justify-center">
-            <button onClick={handleClickLeft} className="rounded-full focus:outline-none"><Image src="/png/left.png" alt="left-icon" width={7} height={12} /></button>
+            <button onClick={handleClickLeft}><Image src="/png/left.png" alt="left-icon" width={7} height={12} /></button>
             <h2 className="text-black font-medium text-sm text-center">{displayTexts[displayTextIndex]}</h2>
-            <button onClick={handleClickRight} className="rounded-full focus:outline-none"><Image src="/png/right.png" alt="right-icon" width={7} height={12} /></button>
+            <button onClick={handleClickRight}><Image src="/png/right.png" alt="right-icon" width={7} height={12} /></button>
         </div>
     )
 }
