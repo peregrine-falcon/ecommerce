@@ -44,7 +44,7 @@ const Form = () => {
                             </label>
                             <div className="mt-1.5">
                                 <input
-                                    type="password"
+                                    type="text"
                                     name="password"
                                     placeholder='Enter'
                                     id="password"
