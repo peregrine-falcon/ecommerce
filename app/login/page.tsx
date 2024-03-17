@@ -1,13 +1,22 @@
+"use client"
+import { useState } from 'react';
 import Link from 'next/link';
 
+
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = (event: any) => {
+        event.preventDefault();
+        setShowPassword(prevState => !prevState);
+    };
 
     return (
         <div className=" bg-white px-6 py-16 lg:px-8">
             <div className='mx-auto max-w-2xl border border-[#C1C1C1] rounded-[20px]'>
                 <h2 className="text-xl font-semibold tracking-tight sm:text-[32px] text-center pt-[39px]">Login</h2>
                 <h3 className="text-lg font-medium tracking-tight sm:text-2xl text-center pt-10">Welcome back to ECOMMERCE</h3>
-                <h4 className="text-sm font-normal tracking-tight sm:text-base text-center pt-4">The next gen business marketplace</h4>
+                <h4 className="text-sm font-normal tracking-tight sm:text-base text-center pt-2">The next gen business marketplace</h4>
                 <form action="#" method="POST" className="mx-auto mt-10 max-w-xl">
                     <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mx-5">
                         <div className="sm:col-span-2">
@@ -29,17 +38,24 @@ const Login = () => {
                             <label htmlFor="password" className="block text-base font-normal leading-6">
                                 Password
                             </label>
-                            <div className="mt-1.5">
+                            <div className="mt-1.5 flex relative">
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     placeholder='Enter'
                                     id="password"
                                     autoComplete="password"
-                                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md border-0 relative px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
+                                <button
+                                    onClick={(event) => togglePasswordVisibility(event)}
+                                    className='absolute right-3.5 top-2 font-normal text-base underline'
+                                >
+                                    {showPassword ? "Hide" : "Show"}
+                                </button>
                             </div>
                         </div>
+
                     </div>
                     <div className="mt-10 mx-5">
                         <button
