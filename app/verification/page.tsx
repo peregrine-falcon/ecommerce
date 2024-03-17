@@ -15,42 +15,42 @@ const Verification = () => {
                     <div className="flex items-center mt-2 gap-x-4">
                         <input
                             type="text"
-                            maxLength="1"
+                            maxLength={1}
                             className="flex items-center justify-center w-full sm:h-10 sm:text-2xl font-medium border border-[#C1C1C1] rounded-md text-center"
                         />
                         <input
                             type="text"
-                            maxLength="1"
+                            maxLength={1}
                             className="flex items-center justify-center w-full sm:h-10 sm:text-2xl font-medium border border-[#C1C1C1] rounded-md text-center"
                         />
                         <input
                             type="text"
-                            maxLength="1"
+                            maxLength={1}
                             className="flex items-center justify-center w-full sm:h-10 sm:text-2xl font-medium border border-[#C1C1C1] rounded-md text-center"
                         />
                         <input
                             type="text"
-                            maxLength="1"
+                            maxLength={1}
                             className="flex items-center justify-center w-full sm:h-10 sm:text-2xl font-medium border border-[#C1C1C1] rounded-md text-center"
                         />
                         <input
                             type="text"
-                            maxLength="1"
+                            maxLength={1}
                             className="flex items-center justify-center w-full sm:h-10 sm:text-2xl font-medium border border-[#C1C1C1] rounded-md text-center"
                         />
                         <input
                             type="text"
-                            maxLength="1"
+                            maxLength={1}
                             className="flex items-center justify-center w-full sm:h-10 sm:text-2xl font-medium border border-[#C1C1C1] rounded-md text-center"
                         />
                         <input
                             type="text"
-                            maxLength="1"
+                            maxLength={1}
                             className="flex items-center justify-center w-full sm:h-10 sm:text-2xl font-medium border border-[#C1C1C1] rounded-md text-center"
                         />
                         <input
                             type="text"
-                            maxLength="1"
+                            maxLength={1}
                             className="flex items-center justify-center w-full sm:h-10 sm:text-2xl font-medium border border-[#C1C1C1] rounded-md text-center"
                         />
                     </div>
