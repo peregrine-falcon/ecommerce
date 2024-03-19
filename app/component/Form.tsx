@@ -30,20 +30,17 @@ const Form = () => {
                 body: JSON.stringify(formData)
             });
             if (response.ok) {
-                // Registration successful
                 const data = await response.json();
                 console.log('User registered:', data);
-                // Reset form fields to initial empty state
                 setFormData(initialFormData);
                 router.push('/interest');
             } else {
-                // Registration failed
                 console.error('Registration failed');
             }
         } catch (error) {
             console.error('Error registering user:', error);
         } finally {
-            setLoading(false); // Set loading back to false when registration process ends
+            setLoading(false);
         }
     };
 
@@ -112,10 +109,10 @@ const Form = () => {
                     <div className="mt-10 mx-5">
                         <button
                             type="submit"
-                            disabled={loading} // Disable the button when loading is true
+                            disabled={loading}
                             className="flex items-center justify-center w-full gap-2 rounded-md bg-black px-3.5 py-4 text-center font-medium sm:text-base text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 relative"
                         >
-                            {loading && ( // Conditionally render the spinner if loading is true
+                            {loading && (
                                 <svg className="text-yellow-400 animate-spin" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24">
                                     <path
