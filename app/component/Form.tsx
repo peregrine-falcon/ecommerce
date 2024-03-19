@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Form = () => {
     const router = useRouter();
@@ -35,7 +37,8 @@ const Form = () => {
                 setFormData(initialFormData);
                 router.push('/interest');
             } else {
-                console.error('Registration failed');
+                console.error('Email already in use');
+                toast.error("Email already in use");
             }
         } catch (error) {
             console.error('Error registering user:', error);
@@ -129,6 +132,8 @@ const Form = () => {
                     </div>
 
                 </form>
+
+                <ToastContainer />
 
                 <div className='mt-10 mb-20'>
                     <h3 className='text-center font-normal text-base text-[#333333]'>Have an Account? <Link href="/login" className='text-base font-medium'>LOGIN</Link></h3>

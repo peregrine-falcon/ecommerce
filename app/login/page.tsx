@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 
+
 const Login = () => {
 
     const router = useRouter();
@@ -38,6 +39,7 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Login successful:', data);
+                localStorage.setItem('token', data.token);
                 router.push('/interest');
             } else {
                 console.error('Login failed');

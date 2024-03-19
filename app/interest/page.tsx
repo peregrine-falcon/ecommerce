@@ -1,10 +1,16 @@
 "use client"
 import { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon, ChevronDoubleRightIcon } from '@heroicons/react/24/outline';
 
 const data = ["Shoes", "Men-tshirt", "Makeup", "Jewellery", "Furniture", "45", "48", "1200", "45"];
 
 const Interest = () => {
+
+    useEffect(() => {
+        toast.success("You are logged In!");
+    }, [])
 
     const [userName, setUserName] = useState('');
 
@@ -93,6 +99,7 @@ const Interest = () => {
                         ))}
                         <ChevronRightIcon className="h-6 w-6 cursor-pointer text-[#ACACAC]" onClick={() => handlePageChange(currentPage + 1)} aria-hidden="true" />
                         <ChevronDoubleRightIcon className="h-6 w-6 cursor-pointer text-[#ACACAC]" onClick={goToLastPage} />
+                        <ToastContainer />
                     </div>
                 </div>
             </div>
