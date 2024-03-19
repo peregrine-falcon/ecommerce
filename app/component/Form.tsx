@@ -1,12 +1,50 @@
+"use client"
 import Link from 'next/link';
+import { useState } from 'react';
+
 
 const Form = () => {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        password: ''
+    });
+
+    const handleChange = (e: any) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        try {
+            // const response = await fetch('https://server-r9y44iet5-peregrine-falcon.vercel.app/user/register', {
+            const response = await fetch('https://server-f9h9.onrender.com/user/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            if (response.ok) {
+                // Registration successful
+                const data = await response.json();
+                console.log('User registered:', data);
+                // Redirect or show success message
+            } else {
+                // Registration failed
+                console.error('Registration failed');
+            }
+        } catch (error) {
+            console.error('Error registering user:', error);
+        }
+    };
 
     return (
         <div className=" bg-white px-6 py-16 lg:px-8">
             <div className='mx-auto max-w-2xl border border-[#C1C1C1] rounded-[20px]'>
                 <h2 className="text-xl font-semibold tracking-tight  sm:text-[32px] text-center pt-[39px]">Create your account</h2>
-                <form action="#" method="POST" className="mx-auto mt-10 max-w-xl sm:mt-20">
+                <form onSubmit={handleSubmit} className="mx-auto mt-10 max-w-xl sm:mt-20">
                     <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mx-5">
                         <div className="sm:col-span-2">
                             <label htmlFor="name" className="block text-base font-normal leading-6">
