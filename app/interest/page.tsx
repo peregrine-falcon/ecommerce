@@ -1,7 +1,7 @@
 'use client'
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon, ChevronDoubleRightIcon } from '@heroicons/react/24/outline';
 
 interface Category {
@@ -79,7 +79,6 @@ const Interest = () => {
                 })
             });
             if (response.ok) {
-                // Update checkedCategoryIds based on checked status
                 if (checked) {
                     setCheckedCategoryIds(prevIds => [...prevIds, categoryId]);
                 } else {
@@ -138,7 +137,7 @@ const Interest = () => {
                                         type="checkbox"
                                         className="accent-black font-normal font-base mr-3 mt-3 checkbox"
                                         onChange={(e) => handleCheckboxChange(category.id, e.target.checked)}
-                                        checked={checkedCategoryIds.includes(category.id)} // Set checked status based on checkedCategoryIds
+                                        checked={checkedCategoryIds.includes(category.id)}
                                     />
                                     {category.name}
                                 </label>
