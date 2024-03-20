@@ -34,8 +34,8 @@ const Form = () => {
             if (response.ok) {
                 const data = await response.json();
                 console.log('User registered:', data);
+                toast.success("User registered! You can login now");
                 setFormData(initialFormData);
-                router.push('/interest');
             } else {
                 console.error('Email already in use');
                 toast.error("Email already in use");
